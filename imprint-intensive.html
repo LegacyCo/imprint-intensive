@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Imprint Intensive — Legacy Creative Co.</title>
+  <meta name="description" content="A 6-month formation intensive for faith-forward founders who are ready to build from who they are — not who they're trying to impress." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Alegreya:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── FONTS ────────────────────────────────────────────────────────────── */
+    @font-face {
+      font-family: 'Timberline';
+      src: url('imprint-assets/Resistenza - Timberline Regular.otf') format('opentype'),
+           url('/Users/KC/Library/CloudStorage/GoogleDrive-hello@legacycreative.co/Shared drives/LC | WORK HUB/02_PROJECTS/01_SERVICE_OFFERINGS/BRAND DISCIPLESHIP 2/BRANDING/FONTS/Timberline/Timberline/Resistenza - Timberline Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ── RESET & BASE ─────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Alegreya', 'Georgia', serif;
+      background: #FFF2E3;
+      color: #1E1A18;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── CSS VARIABLES ────────────────────────────────────────────────────── */
+    :root {
+      --black:    #1E1A18;   /* Matte Black */
+      --cream:    #FFF2E3;   /* Cream */
+      --cream-dk: #F0E4D2;   /* Cream darker */
+      --sage:     #969984;   /* Sage */
+      --sage-lt:  #B5B6A7;   /* Sage light */
+      --sand:     #E4D5C2;   /* Sand */
+      --clay:     #795852;   /* Clay */
+      --olive:    #4E4F40;   /* Olive */
+      --charcoal: #2C2825;   /* Dark warm charcoal */
+      --max-w:    1100px;
+    }
+
+    /* ── UTILITY ──────────────────────────────────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+    /* Bebas Neue — all headlines */
+    .bebas {
+      font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+    }
+    /* Timberline — single-line subhead accents ONLY */
+    .timberline { font-family: 'Timberline', 'Georgia', serif; font-weight: normal; letter-spacing: -0.02em; }
+    .label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ── SCROLL ANIMATIONS ────────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.75s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.10s; }
+    .reveal-d2 { transition-delay: 0.20s; }
+    .reveal-d3 { transition-delay: 0.30s; }
+    .reveal-d4 { transition-delay: 0.40s; }
+    .reveal-d5 { transition-delay: 0.50s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ── NAVBAR ───────────────────────────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(30,26,24,0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(255,242,227,0.05);
+    }
+    .nav-logo img { height: 38px; width: auto; }
+    .nav-cta {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: var(--cream);
+      color: var(--black);
+      border: none;
+      padding: 0.65rem 1.5rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--sand); }
+
+    /* ── HERO ─────────────────────────────────────────────────────────────── */
+    #hero {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 2rem 7rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-mark {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(80vw, 680px);
+      height: min(80vw, 680px);
+      opacity: 0.045;
+      pointer-events: none;
+      will-change: transform;
+      animation: slowRotate 90s linear infinite;
+    }
+    .hero-bg-mark img { width: 100%; height: 100%; object-fit: contain; }
+    @keyframes slowRotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .hero-logo { margin-bottom: 3rem; }
+    .hero-logo img { height: 88px; width: auto; }
+    .hero-h1 {
+      font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+      font-size: clamp(3.2rem, 9vw, 8.5rem);
+      line-height: 0.95;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      max-width: 960px;
+      letter-spacing: -0.01em;
+    }
+    .hero-h1 em { color: var(--sage-lt); font-style: normal; }
+    .hero-h1 .line { display: block; }
+    .hero-accent {
+      font-family: 'Timberline', 'Georgia', serif;
+      font-size: 1.55rem;
+      font-weight: normal;
+      color: var(--sage-lt);
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .hero-sub {
+      font-family: 'Alegreya', Georgia, serif;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,242,227,0.6);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+    /* Hero entrance animation */
+    .hero-logo      { opacity: 0; animation: fadeUp 0.9s 0.15s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-accent    { opacity: 0; animation: fadeUp 0.9s 0.30s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-h1 .line-1{ opacity: 0; animation: fadeUp 0.9s 0.45s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-h1 .line-2{ opacity: 0; animation: fadeUp 0.9s 0.60s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-sub       { opacity: 0; animation: fadeUp 0.9s 0.80s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-ctas      { opacity: 0; animation: fadeUp 0.9s 1.00s cubic-bezier(0.16,1,0.3,1) forwards; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── BUTTONS ──────────────────────────────────────────────────────────── */
+    .btn-primary {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: var(--cream);
+      color: var(--black);
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.25s;
+      animation: ctaPulse 3s ease-in-out infinite;
+    }
+    .btn-primary:hover { background: var(--sand); transform: translateY(-2px); }
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,242,227,0); }
+      50%       { box-shadow: 0 0 24px 4px rgba(255,242,227,0.14); }
+    }
+    .btn-ghost {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: transparent;
+      color: var(--cream);
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      display: inline-block;
+      border: 1.5px solid rgba(255,242,227,0.32);
+      transition: border-color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--cream); }
+
+    /* scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    }
+    .scroll-cue span {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,242,227,0.3);
+    }
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, rgba(255,242,227,0.3), transparent);
+      animation: scrollBlink 2s ease-in-out infinite;
+    }
+    @keyframes scrollBlink {
+      0%,100% { opacity: 0.4; } 50% { opacity: 1; }
+    }
+
+    /* ── SECTION SKELETON ─────────────────────────────────────────────────── */
+    .s-inner { padding: 7rem 2rem; max-width: var(--max-w); margin: 0 auto; }
+    .s-label { display: block; margin-bottom: 1.5rem; color: var(--sage); }
+    .s-h2 {
+      font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.75rem;
+    }
+    .s-body { font-family: 'Alegreya', Georgia, serif; font-size: 1.1rem; line-height: 1.78; max-width: 620px; }
+    .s-body-wide { font-family: 'Alegreya', Georgia, serif; font-size: 1.1rem; line-height: 1.78; max-width: 800px; }
+
+    /* ── SCRIPTURE BAR ────────────────────────────────────────────────────── */
+    .scripture-bar {
+      background: var(--charcoal);
+      text-align: center;
+      padding: 2.5rem 2rem;
+    }
+    .scripture-bar p {
+      font-family: 'Alegreya', Georgia, serif;
+      font-size: 1rem; color: rgba(255,242,227,0.42);
+      font-style: italic; line-height: 1.7;
+      max-width: 580px; margin: 0 auto;
+    }
+    .scripture-bar cite {
+      display: block; margin-top: 0.5rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,242,227,0.22); font-style: normal;
+    }
+
+    /* ── PROBLEM ──────────────────────────────────────────────────────────── */
+    #problem { background: var(--cream); }
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 4rem 0;
+    }
+    .problem-card {
+      background: var(--cream-dk);
+      padding: 2.5rem 2rem;
+      border-top: 3px solid var(--black);
+    }
+    .p-type {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 0.85rem; display: block;
+    }
+    .problem-card h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.15rem; line-height: 1.5; font-weight: normal;
+    }
+    .pullquote {
+      font-family: 'Alegreya', Georgia, serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      line-height: 1.25; color: var(--black); font-style: italic;
+      border-left: 4px solid var(--sage);
+      padding-left: 2.5rem; margin-top: 4rem; max-width: 800px;
+    }
+
+    /* ── GUIDE ────────────────────────────────────────────────────────────── */
+    #guide { background: var(--charcoal); }
+    .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .guide-h2 { color: var(--cream); }
+    .guide-body { font-family: 'Alegreya', Georgia, serif; color: rgba(255,242,227,0.75); font-size: 1.1rem; line-height: 1.78; max-width: 520px; }
+    .guide-body + .guide-body { margin-top: 1.25rem; }
+    .authority-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px; margin-top: 3rem;
+    }
+    .auth-item {
+      background: rgba(255,242,227,0.03);
+      border-top: 1.5px solid rgba(255,242,227,0.12);
+      padding: 1.75rem 1.25rem;
+    }
+    .auth-num {
+      font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+      font-size: 3rem; color: var(--cream); line-height: 1;
+      margin-bottom: 0.4rem; display: block;
+    }
+    .auth-lbl {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.1em;
+      color: rgba(255,242,227,0.38); text-transform: uppercase;
+    }
+    .guide-pullquote {
+      margin-top: 2.5rem;
+      padding: 2.25rem 2rem;
+      background: rgba(255,242,227,0.04);
+      border-left: 3px solid var(--sage);
+    }
+    .guide-pullquote blockquote {
+      font-family: 'Alegreya', Georgia, serif;
+      font-size: 1.25rem; line-height: 1.55;
+      color: var(--cream); font-style: italic;
+    }
+    .guide-pullquote cite {
+      display: block; margin-top: 0.85rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.1em;
+      color: var(--sage); text-transform: uppercase; font-style: normal;
+    }
+    .guide-photo {
+      width: 100%; aspect-ratio: 3/4;
+      background: rgba(255,242,227,0.05);
+      border: 1px solid rgba(255,242,227,0.08);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+    }
+    .guide-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    /* ── PILLARS ──────────────────────────────────────────────────────────── */
+    #plan { background: var(--cream); }
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2px; margin: 4rem 0;
+    }
+    .pillar-card {
+      background: var(--cream-dk);
+      padding: 2.5rem 1.5rem 2rem;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      border-top: 3px solid var(--black);
+      opacity: 0;
+      transform: translateY(28px) rotate(-2.5deg);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.65s cubic-bezier(0.16,1,0.3,1),
+                  box-shadow 0.25s;
+    }
+    .pillar-card.in { opacity: 1; transform: translateY(0) rotate(0deg); }
+    .pillar-card:hover { box-shadow: 0 8px 32px rgba(30,26,24,0.09); transform: translateY(-4px) rotate(0deg); }
+    .pillar-card:nth-child(2) { transition-delay: 0.08s; }
+    .pillar-card:nth-child(3) { transition-delay: 0.16s; }
+    .pillar-card:nth-child(4) { transition-delay: 0.24s; }
+    .pillar-img { width: 140px; height: 140px; object-fit: contain; margin-bottom: 1.5rem; }
+    .pillar-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 0.7rem;
+    }
+    .pillar-q { font-size: 0.95rem; line-height: 1.55; font-style: italic; }
+
+    /* ── INCLUDED ─────────────────────────────────────────────────────────── */
+    #included { background: var(--black); }
+    .inc-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; margin-top: 3.5rem;
+    }
+    .inc-item {
+      background: rgba(255,242,227,0.025);
+      border-top: 1.5px solid rgba(255,242,227,0.09);
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+    .inc-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .inc-n {
+      font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+      font-size: 4rem; color: rgba(255,242,227,0.06);
+      position: absolute; top: 1rem; right: 1.5rem; line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .inc-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 0.7rem;
+    }
+    .inc-desc { font-family: 'Alegreya', Georgia, serif; font-size: 1.05rem; color: rgba(255,242,227,0.78); line-height: 1.68; }
+
+    /* ── MID CTA ──────────────────────────────────────────────────────────── */
+    #cta-mid { background: var(--sage); text-align: center; }
+    #cta-mid .s-inner { padding: 6rem 2rem; }
+    #cta-mid .s-h2 { color: var(--cream); max-width: 680px; margin: 0 auto 1.25rem; }
+    #cta-mid .s-body { color: rgba(255,242,227,0.78); max-width: 500px; margin: 0 auto 2.5rem; }
+    .btn-dark { background: var(--black); color: var(--cream); }
+    .btn-dark:hover { background: var(--charcoal); }
+    .cta-fn {
+      margin-top: 1.5rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem; color: rgba(255,242,227,0.5);
+    }
+    .cta-fn a { color: rgba(255,242,227,0.75); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── STAKES ───────────────────────────────────────────────────────────── */
+    #stakes { background: var(--cream); }
+    .stakes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 4rem; align-items: start; }
+    .before-h {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(30,26,24,0.3); margin-bottom: 1.5rem; display: block;
+    }
+    .before-list { list-style: none; }
+    .before-list li {
+      padding: 0.9rem 0; border-bottom: 1px solid rgba(30,26,24,0.07);
+      font-size: 1rem; color: rgba(30,26,24,0.38);
+      text-decoration: line-through; text-decoration-color: rgba(30,26,24,0.18);
+    }
+    .stakes-box { background: var(--clay); padding: 3rem 2.5rem; color: var(--cream); }
+    .stakes-box-lbl {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,242,227,0.55); margin-bottom: 1rem; display: block;
+    }
+    .stakes-box p { font-size: 1.05rem; line-height: 1.75; color: rgba(255,242,227,0.88); }
+    .stakes-box p + p { margin-top: 1rem; }
+
+    /* ── TRANSFORMATION ───────────────────────────────────────────────────── */
+    #transform { background: var(--black); }
+    .tr-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2px; margin-top: 3.5rem;
+    }
+    .tr-item {
+      padding: 1.75rem 2rem;
+      background: rgba(255,242,227,0.025);
+      border-left: 2px solid var(--sage);
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .tr-mark { color: var(--sage); font-size: 1.1rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .tr-item p { font-size: 1.05rem; color: rgba(255,242,227,0.84); line-height: 1.55; }
+    .tr-sub { font-size: 0.83rem; color: rgba(255,242,227,0.32); margin-top: 0.2rem; }
+
+    /* ── PRICING ──────────────────────────────────────────────────────────── */
+    #pricing { background: var(--cream); }
+    .pricing-lede {
+      font-size: 1.1rem; color: rgba(30,26,24,0.52); font-style: italic;
+      max-width: 620px; margin-bottom: 3.5rem; line-height: 1.75;
+    }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .pc {
+      background: var(--cream-dk);
+      border-top: 3px solid var(--black);
+      padding: 2.75rem 2rem;
+      position: relative;
+      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
+      cursor: default;
+    }
+    .pc:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(30,26,24,0.11); }
+    .pc.featured { background: var(--black); border-color: var(--sage); }
+    .featured-badge {
+      position: absolute; top: -1px; right: 2rem;
+      background: var(--sage); color: var(--cream);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.38rem 0.8rem;
+    }
+    .pc-tier {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--sage); margin-bottom: 0.85rem; display: block;
+    }
+    .pc-price {
+      font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+      font-size: 4.5rem; line-height: 1; color: var(--black); margin-bottom: 0.2rem;
+      letter-spacing: -0.02em;
+    }
+    .pc.featured .pc-price { color: var(--cream); }
+    .pc-dur {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem; color: rgba(30,26,24,0.4);
+      margin-bottom: 1.75rem; display: block;
+    }
+    .pc.featured .pc-dur { color: rgba(255,242,227,0.4); }
+    .pc-note {
+      font-size: 0.97rem; line-height: 1.58; font-style: italic;
+      color: rgba(30,26,24,0.62);
+      padding-top: 1.25rem; border-top: 1px solid rgba(30,26,24,0.07);
+    }
+    .pc.featured .pc-note { color: rgba(255,242,227,0.65); border-color: rgba(255,242,227,0.09); }
+    .pc-cta {
+      display: inline-block; margin-top: 2rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+      padding: 0.85rem 1.75rem; text-decoration: none;
+      background: var(--black); color: var(--cream);
+      transition: background 0.2s; cursor: pointer;
+    }
+    .pc-cta:hover { background: var(--charcoal); }
+    .pc.featured .pc-cta { background: var(--sage); }
+    .pc.featured .pc-cta:hover { background: var(--olive); }
+    .pricing-aside {
+      margin-top: 3rem; padding: 2rem;
+      background: var(--cream-dk);
+      border-left: 3px solid var(--sand);
+      font-size: 1rem; color: rgba(30,26,24,0.62);
+      line-height: 1.68; font-style: italic;
+    }
+
+    /* ── FINAL CTA ────────────────────────────────────────────────────────── */
+    #final-cta { background: var(--black); text-align: center; }
+    #final-cta .s-inner { padding: 8rem 2rem 5rem; }
+    .footer-logo img { height: 96px; width: auto; margin-bottom: 2.75rem; }
+    #final-cta .s-h2 { color: var(--cream); max-width: 680px; margin: 0 auto 1rem; }
+    #final-cta .s-body { color: rgba(255,242,227,0.48); max-width: 440px; margin: 0 auto 3rem; }
+    .final-sub {
+      margin-top: 1.5rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem; color: rgba(255,242,227,0.3);
+    }
+    .final-sub a { color: rgba(255,242,227,0.5); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,242,227,0.06);
+      padding: 2rem;
+    }
+    .footer-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .ft { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,242,227,0.22); text-decoration: none; }
+
+    /* ── UTILITY FILTERS ──────────────────────────────────────────────────── */
+    .img-invert { filter: brightness(0) invert(1); }
+    .hero-bg-mark img { filter: brightness(0) invert(1); opacity: 0.045; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .problem-cards { grid-template-columns: 1fr; }
+      .pillars-grid  { grid-template-columns: repeat(2, 1fr); }
+      .guide-grid    { grid-template-columns: 1fr; gap: 3rem; }
+      .guide-photo   { aspect-ratio: 4/3; }
+      .stakes-grid   { grid-template-columns: 1fr; gap: 3rem; }
+      .pricing-grid  { grid-template-columns: 1fr; max-width: 440px; }
+      .inc-grid      { grid-template-columns: 1fr; }
+      .tr-grid       { grid-template-columns: 1fr; }
+      .authority-row { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .pillars-grid  { grid-template-columns: 1fr; }
+      .authority-row { grid-template-columns: 1fr; }
+      .hero-ctas     { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-ghost { text-align: center; }
+      .s-inner { padding: 4.5rem 1.5rem; }
+      .guide-photo { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ═══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" aria-label="Site navigation">
+    <a class="nav-logo" href="#hero" aria-label="Back to top">
+      <img
+        src="imprint-assets/logomark-black.svg" class="img-invert"
+        alt="Legacy Creative Co."
+        height="38"
+      />
+    </a>
+    <a href="#final-cta" class="nav-cta">Apply Now</a>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════════════════════════ -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg-mark" aria-hidden="true">
+      <img
+        src="imprint-assets/logomark-black.svg" class="img-invert"
+        alt=""
+      />
+    </div>
+
+    <div class="hero-logo">
+      <img
+        src="imprint-assets/logo-cream-stacked.svg"
+        alt="Brand Discipleship — Legacy Creative Co."
+        height="88"
+      />
+    </div>
+
+    <span class="hero-accent" aria-hidden="true">The Imprint Intensive</span>
+
+    <h1 id="hero-heading" class="hero-h1">
+      <span class="line line-1">Stop Building for <em>Approval.</em></span>
+      <span class="line line-2">Start Building from <em>Identity.</em></span>
+    </h1>
+
+    <p class="hero-sub">
+      A 6-month formation intensive for faith-forward founders who are ready
+      to build from who they are — not who they're trying to impress.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#final-cta" class="btn-primary">Apply for the Intensive →</a>
+      <a href="#problem"  class="btn-ghost">See How It Works ↓</a>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══ SCRIPTURE ═════════════════════════════════════════════════════════ -->
+  <div class="scripture-bar">
+    <p>"Wise people are builders — through their intelligence and insight, their enterprises are established, and they endure."</p>
+    <cite>Proverbs 24:3–4 TPT</cite>
+  </div>
+
+  <!-- ══ PROBLEM ════════════════════════════════════════════════════════════ -->
+  <section id="problem">
+    <div class="s-inner">
+      <span class="label s-label reveal">The Problem</span>
+      <h2 class="s-h2 reveal reveal-d1">
+        Everything on the<br/>outside looks fine.
+      </h2>
+      <p class="s-body reveal reveal-d2">
+        You're building. You're earning. You're executing. But something on the
+        inside has gone quiet. You can't point to what's wrong — you just know the
+        thing you're doing isn't quite the thing you were made for.
+      </p>
+
+      <div class="problem-cards">
+        <div class="problem-card reveal">
+          <span class="p-type">External</span>
+          <h3>"The business is growing, but you're shrinking inside it."</h3>
+        </div>
+        <div class="problem-card reveal reveal-d1">
+          <span class="p-type">Internal</span>
+          <h3>"You've mistaken motion for purpose — and the hamster wheel doesn't announce itself. It just gets faster."</h3>
+        </div>
+        <div class="problem-card reveal reveal-d2">
+          <span class="p-type">Philosophical</span>
+          <h3>"You were made in the image of a Creator. This work should feel like inheritance, not performance."</h3>
+        </div>
+      </div>
+
+      <blockquote class="pullquote reveal">
+        "Become the kind of person who<br/>can carry the weight of your calling."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ══ GUIDE ══════════════════════════════════════════════════════════════ -->
+  <section id="guide">
+    <div class="s-inner">
+      <div class="guide-grid">
+        <div>
+          <span class="label reveal" style="color:var(--sage);display:block;margin-bottom:1.5rem;">The Guide</span>
+          <h2 class="s-h2 guide-h2 reveal reveal-d1">
+            A chaplain with<br/>a curator's heart.
+          </h2>
+          <p class="guide-body reveal reveal-d2">
+            KC Clark has spent 30 years at the intersection of faith, creativity, and
+            formation. He founded Legacy Creative Co. in response to an invitation. Not
+            as a brand agency, but as an act of obedience.
+          </p>
+          <p class="guide-body reveal reveal-d3">
+            He has lived inside the creative life from every angle: as the artist, the
+            pastor, the entrepreneur, the mentor. That range isn't a résumé. It's the
+            reason he can see what others miss. He knows what transformation costs. He
+            knows what it delivers.
+          </p>
+
+          <div class="authority-row">
+            <div class="auth-item reveal">
+              <span class="auth-num" data-count="30" data-suffix="+">30+</span>
+              <span class="auth-lbl">Years in creative formation</span>
+            </div>
+            <div class="auth-item reveal reveal-d1">
+              <span class="auth-num">100's</span>
+              <span class="auth-lbl">of hours in 1-on-1 development</span>
+            </div>
+            <div class="auth-item reveal reveal-d2">
+              <span class="auth-num">1</span>
+              <span class="auth-lbl">Framework rooted in ancient wisdom</span>
+            </div>
+          </div>
+
+          <div class="guide-pullquote reveal reveal-d1">
+            <blockquote>
+              "I want to care for your heart and the thing you're called to create."
+            </blockquote>
+            <cite>— KC Clark, Chief Curator, Legacy Creative Co.</cite>
+          </div>
+        </div>
+
+        <div class="guide-photo reveal reveal-d2">
+          <img
+            src="imprint-assets/kc-clark-headshot.jpg"
+            alt="KC Clark — Chief Curator, Legacy Creative Co."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PLAN — FOUR PILLARS ════════════════════════════════════════════════ -->
+  <section id="plan">
+    <div class="s-inner">
+      <span class="label s-label reveal">The Framework</span>
+      <h2 class="s-h2 reveal reveal-d1">
+        Formation first.<br/>Everything else follows.
+      </h2>
+      <p class="s-body-wide reveal reveal-d2">
+        Brand Discipleship is a proprietary methodology rooted in Proverbs 24:3–4.
+        It asks the questions most coaches never ask — and begins with the one that
+        matters most: <em>Who are you becoming?</em>
+      </p>
+
+      <div class="pillars-grid" aria-label="The four pillars of Brand Discipleship">
+        <div class="pillar-card" data-pillar>
+          <img class="pillar-img"
+            src="imprint-assets/pillar-imprint.svg"
+            alt="Imprint — identity pillar icon" />
+          <span class="pillar-name">Imprint</span>
+          <p class="pillar-q">"Do you know who you are?"</p>
+        </div>
+        <div class="pillar-card" data-pillar>
+          <img class="pillar-img"
+            src="imprint-assets/pillar-mountain.svg"
+            alt="Mountain — vision pillar icon" />
+          <span class="pillar-name">Mountain</span>
+          <p class="pillar-q">"Do you have vision?"</p>
+        </div>
+        <div class="pillar-card" data-pillar>
+          <img class="pillar-img"
+            src="imprint-assets/pillar-inner-place.svg"
+            alt="Inner Place — spiritual health pillar icon" />
+          <span class="pillar-name">Inner Place</span>
+          <p class="pillar-q">"Do you maintain a consistent connection with God?"</p>
+        </div>
+        <div class="pillar-card" data-pillar>
+          <img class="pillar-img"
+            src="imprint-assets/pillar-overflow.svg"
+            alt="Overflow — creative output pillar icon" />
+          <span class="pillar-name">Overflow</span>
+          <p class="pillar-q">"Is there a clear pathway where the work flows from who you are?"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT'S INCLUDED ════════════════════════════════════════════════════ -->
+  <section id="included">
+    <div class="s-inner">
+      <span class="label reveal" style="color:var(--sage);display:block;margin-bottom:1.5rem;">What's Included</span>
+      <h2 class="s-h2 reveal reveal-d1" style="color:var(--cream);">
+        Six months.<br/>One life.
+      </h2>
+
+      <div class="inc-grid">
+        <div class="inc-item reveal">
+          <span class="inc-n" aria-hidden="true">01</span>
+          <p class="inc-title">Weekly 1-on-1 Formation Calls</p>
+          <p class="inc-desc">Deep, relational conversations anchored in Brand Discipleship. Formation-first. Strategy second. These are not coaching calls — they're formation conversations.</p>
+        </div>
+        <div class="inc-item reveal reveal-d1">
+          <span class="inc-n" aria-hidden="true">02</span>
+          <p class="inc-title">Two Quarterly Solitude Frameworks</p>
+          <p class="inc-desc">Guided personal retreat frameworks designed to help you take the 30,000-foot view and return to your work with clarity — not just momentum.</p>
+        </div>
+        <div class="inc-item reveal reveal-d2">
+          <span class="inc-n" aria-hidden="true">03</span>
+          <p class="inc-title">The Imprint Assessment</p>
+          <p class="inc-desc">A reflective diagnostic completed at the start. Not a grade — a mirror. It shows you exactly where you are on the identity formation continuum across the four pillars.</p>
+        </div>
+        <div class="inc-item reveal reveal-d3">
+          <span class="inc-n" aria-hidden="true">04</span>
+          <p class="inc-title">Closing Multi-Day Retreat</p>
+          <p class="inc-desc">A final intensive gathering to consolidate transformation, anchor the work, and look ahead with clarity about who you're becoming and what you're building from that place.</p>
+        </div>
+        <div class="inc-item reveal reveal-d4">
+          <span class="inc-n" aria-hidden="true">05</span>
+          <p class="inc-title">Ongoing Between-Session Access</p>
+          <p class="inc-desc">Because formation doesn't wait for the next call. Direct access for real-time questions, reflection prompts, and discernment support — when it matters, not just when it's scheduled.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MID CTA ════════════════════════════════════════════════════════════ -->
+  <section id="cta-mid">
+    <div class="s-inner">
+      <span class="label reveal" style="color:rgba(255,242,227,0.55);display:block;margin-bottom:1.5rem;">Ready to go deeper?</span>
+      <h2 class="s-h2 reveal reveal-d1">
+        Become the kind of person<br/>who can carry the weight<br/>of your calling.
+      </h2>
+      <p class="s-body reveal reveal-d2">
+        The Imprint Intensive is a 6-month 1-on-1 formation journey.
+        Application required. Spots are intentionally limited.
+      </p>
+      <div class="reveal reveal-d3">
+        <a href="#final-cta" class="btn-primary btn-dark">Apply for the Intensive</a>
+        <p class="cta-fn">Not sure yet? <a href="#final-cta">Schedule a discovery call first →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STAKES ═════════════════════════════════════════════════════════════ -->
+  <section id="stakes">
+    <div class="s-inner">
+      <span class="label reveal" style="color:var(--clay);display:block;margin-bottom:1.5rem;">What's at Stake</span>
+      <h2 class="s-h2 reveal reveal-d1">
+        The cost of inaction<br/>isn't measured in dollars.
+      </h2>
+
+      <div class="stakes-grid">
+        <div>
+          <p class="s-body reveal" style="margin-bottom:2rem;">
+            It shows up in drifting marriages. In quiet creativity. In businesses that
+            survive while their founders slowly disappear.
+          </p>
+          <p class="s-body reveal reveal-d1">
+            The hamster wheel is patient. It doesn't demand you quit. It just asks you
+            to keep going — until one day you look up and realize everything on the
+            outside looks fine, but the person inside has gone very, very quiet.
+          </p>
+          <div style="margin-top:3rem;">
+            <span class="before-h reveal">Without formation</span>
+            <ul class="before-list reveal reveal-d1" aria-label="The before state">
+              <li>Building for approval</li>
+              <li>Motion without meaning</li>
+              <li>Dissatisfied, but can't explain why</li>
+              <li>Measuring value by output</li>
+              <li>Work consuming family and faith</li>
+              <li>Identity tied to performance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stakes-box reveal reveal-d2">
+          <span class="stakes-box-lbl">The real cost</span>
+          <p>"People question the price before they're in the room. Nobody questions it after."</p>
+          <p>You paid for the productivity app. You paid for the course you didn't finish. You invested in the strategy that solved the wrong problem.</p>
+          <p>What you haven't invested in — yet — is yourself. The person doing the building. The one who has to carry all of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TRANSFORMATION ═════════════════════════════════════════════════════ -->
+  <section id="transform">
+    <div class="s-inner">
+      <span class="label reveal" style="color:var(--sage);display:block;margin-bottom:1.5rem;">The Transformation</span>
+      <h2 class="s-h2 reveal reveal-d1" style="color:var(--cream);">
+        What it looks like<br/>on the other side.
+      </h2>
+      <p class="s-body reveal reveal-d2" style="color:rgba(255,242,227,0.55);margin-bottom:0;">
+        The Imprint Intensive doesn't fix your brand. It forms the person who carries it.
+      </p>
+
+      <div class="tr-grid" aria-label="The after state — with formation">
+        <div class="tr-item reveal">
+          <span class="tr-mark" aria-hidden="true">—</span>
+          <div><p>Building from <strong style="color:var(--cream);">identity</strong></p><p class="tr-sub">not for approval</p></div>
+        </div>
+        <div class="tr-item reveal reveal-d1">
+          <span class="tr-mark" aria-hidden="true">—</span>
+          <div><p>Generative, <strong style="color:var(--cream);">purposeful</strong> work</p><p class="tr-sub">not motion without meaning</p></div>
+        </div>
+        <div class="tr-item reveal reveal-d2">
+          <span class="tr-mark" aria-hidden="true">—</span>
+          <div><p>Clear on the <strong style="color:var(--cream);">source of the quiet</strong></p><p class="tr-sub">no longer drifting without a diagnosis</p></div>
+        </div>
+        <div class="tr-item reveal reveal-d3">
+          <span class="tr-mark" aria-hidden="true">—</span>
+          <div><p>Knowing your <strong style="color:var(--cream);">worth</strong> and asking for it</p><p class="tr-sub">not measuring value by output</p></div>
+        </div>
+        <div class="tr-item reveal reveal-d4">
+          <span class="tr-mark" aria-hidden="true">—</span>
+          <div><p>Business as a <strong style="color:var(--cream);">vehicle for generosity</strong></p><p class="tr-sub">not a machine that consumes your life</p></div>
+        </div>
+        <div class="tr-item reveal reveal-d5">
+          <span class="tr-mark" aria-hidden="true">—</span>
+          <div><p>Identity rooted in <strong style="color:var(--cream);">formation</strong></p><p class="tr-sub">not tied to performance</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRICING ════════════════════════════════════════════════════════════ -->
+  <section id="pricing">
+    <div class="s-inner">
+      <span class="label s-label reveal">The Investment</span>
+      <h2 class="s-h2 reveal reveal-d1">
+        An investment in the<br/>person doing the building.
+      </h2>
+      <p class="pricing-lede reveal reveal-d2">
+        "I invested $10,000/year for three years in my own formation. I know what this level
+        of transformation costs. I know what it delivers." —&thinsp;KC Clark
+      </p>
+
+      <div class="pricing-grid">
+        <div class="pc reveal">
+          <span class="pc-tier">Beta Cohort</span>
+          <span class="pc-price">$3K</span>
+          <span class="pc-dur">90 Days · Cohort Format</span>
+          <p class="pc-note">Get in early. Shape the experience. Cohort pricing will not last.</p>
+          <a href="mailto:hello@legacycreative.co?subject=Imprint%20Intensive%20Beta%20Application" class="pc-cta">Apply for Beta</a>
+        </div>
+        <div class="pc featured reveal reveal-d1">
+          <span class="featured-badge">Core Offer</span>
+          <span class="pc-tier">Full Intensive</span>
+          <span class="pc-price">$9K</span>
+          <span class="pc-dur">6 Months · 1-on-1 Format</span>
+          <p class="pc-note">The complete formation experience. Weekly calls, the Imprint Assessment, solitude frameworks, and the closing retreat.</p>
+          <a href="mailto:hello@legacycreative.co?subject=Imprint%20Intensive%20Application" class="pc-cta">Apply for the Intensive</a>
+        </div>
+        <div class="pc reveal reveal-d2">
+          <span class="pc-tier">Premium</span>
+          <span class="pc-price">$12K+</span>
+          <span class="pc-dur">6 Months · 1-on-1 + Extended Retreat</span>
+          <p class="pc-note">For founders who want the full experience with an expanded in-person retreat component.</p>
+          <a href="mailto:hello@legacycreative.co?subject=Imprint%20Intensive%20Premium%20Inquiry" class="pc-cta">Inquire About Premium</a>
+        </div>
+      </div>
+
+      <p class="pricing-aside reveal">
+        Payment plans are available. All tiers require an application — not to filter you out,
+        but because this is a relational engagement. The right fit matters as much as the investment.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ══════════════════════════════════════════════════════════ -->
+  <section id="final-cta">
+    <div class="s-inner">
+      <div class="footer-logo reveal">
+        <img
+          src="imprint-assets/logo-cream-stacked.svg"
+          alt="Brand Discipleship — Legacy Creative Co."
+          height="96"
+        />
+      </div>
+      <h2 class="s-h2 reveal reveal-d1">
+        Formation first.<br/>Everything else follows.
+      </h2>
+      <p class="s-body reveal reveal-d2">
+        If this resonates, the Imprint Intensive may be for you. The application is short.
+        The conversation is unhurried.
+      </p>
+      <div class="reveal reveal-d3">
+        <a href="mailto:hello@legacycreative.co?subject=Imprint%20Intensive%20Application" class="btn-primary" style="font-size:0.88rem;padding:1.2rem 3rem;">
+          Apply for the Imprint Intensive →
+        </a>
+      </div>
+      <p class="final-sub reveal reveal-d4">
+        Or reach out directly at
+        <a href="mailto:hello@legacycreative.co">hello@legacycreative.co</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="ft">© 2026 Legacy Creative Co.</span>
+      <span class="ft">Establish · Build · Endure</span>
+      <a href="http://legacycreativeco.com" class="ft" target="_blank" rel="noopener">legacycreativeco.com</a>
+    </div>
+  </footer>
+
+  <!-- ══ SCRIPTS ════════════════════════════════════════════════════════════ -->
+  <script>
+    // ── Navbar scroll effect ──────────────────────────────────────────────
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    // ── Hero parallax on bg mark ─────────────────────────────────────────
+    const bgMark = document.querySelector('.hero-bg-mark');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking && bgMark) {
+        requestAnimationFrame(() => {
+          bgMark.style.marginTop = (window.scrollY * 0.22) + 'px';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // ── Counter animation ────────────────────────────────────────────────
+    function runCounter(el) {
+      const count  = parseInt(el.dataset.count  || '0', 10);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      if (!count) return;
+      let current = 0;
+      const duration = 1200;
+      const step = count / (duration / 16);
+      const t = setInterval(() => {
+        current = Math.min(current + step, count);
+        el.textContent = prefix + Math.floor(current) + suffix;
+        if (current >= count) clearInterval(t);
+      }, 16);
+    }
+
+    // ── Smooth scroll for anchor links ───────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // ── Scroll reveal — defer until after first paint so opacity:0 renders ──
+    // Double rAF guarantees browser has painted the initial state before
+    // IntersectionObserver fires, preventing all elements becoming visible at load.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+
+        const revealObs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              revealObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+        // ── Pillar card entrance ────────────────────────────────────────
+        const pillarObs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              pillarObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('[data-pillar]').forEach(el => pillarObs.observe(el));
+
+        // ── Counter animation ────────────────────────────────────────────
+        const counterObs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting && e.target.dataset.count && !e.target.dataset.done) {
+              e.target.dataset.done = '1';
+              runCounter(e.target);
+              counterObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.6 });
+
+        document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+      }); // end inner rAF
+    }); // end outer rAF
+  </script>
+
+</body>
+</html>
